@@ -35,7 +35,7 @@ app.get("/api/users", (req, res) => {
   const { username, sort } = req.query;
 
   try {
-    let filteredUsers = users;
+    let filteredUsers = [...users];
     if (username) {
       filteredUsers = filteredUsers.filter((user) =>
         user.username.toLowerCase().includes(username.toLowerCase())
